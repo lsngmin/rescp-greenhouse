@@ -4,7 +4,7 @@ Code for *Reservoir Conformal Prediction for Greenhouse Climate Forecasting unde
 
 Prediction intervals for the next-hour maximum indoor air temperature and relative humidity in greenhouses, built with ResCP on seven base forecasters, evaluated on two real greenhouse datasets (Korea, Netherlands) and in closed-loop simulation with GreenLight-Gym.
 
-Processed data, trained models and all result files: Zenodo (DOI to be added).
+Archived versions: code https://doi.org/10.5281/zenodo.23754280, data and results https://doi.org/10.5281/zenodo.23754795 (processed datasets, trained models, prediction intervals, closed-loop traces and figures).
 
 ## Layout
 
@@ -47,7 +47,7 @@ Closed-loop results were obtained in the `glgym` environment as exported here; s
 - Netherlands dataset: Autonomous Greenhouse Challenge, first edition, 4TU.ResearchData, doi:10.4121/uuid:e4987a7b-04dd-4c89-9b18-883aad30ba9a (CC0). Reference compartment.
 - Simulation weather: Amsterdam 2011, included in GreenLight-Gym.
 
-Processed files (`data/kangwon.parquet`, `data/agc1_ref.parquet`, `data/splits.json`) are provided on Zenodo. To rebuild them from the raw downloads:
+Processed files (`data/kangwon.parquet`, `data/agc1_ref.parquet`, `data/splits.json`) are in `data.zip` of the Zenodo data record (https://doi.org/10.5281/zenodo.23754795). To rebuild them from the raw downloads:
 
 ```bash
 python preprocess/preprocess_kangwon.py --raw raw/kangwon/HTVT_validation_10min.csv \
@@ -73,7 +73,7 @@ bash scripts/run_all.sh
 | 3 | `scripts/run_03_simulation.sh` | glgym + rescp | `results_sim/baseline_2011.csv`, `data_sim/`, `results_sim/pred/sim_2011/`, `results_sim/closed_2011/` |
 | 4 | `scripts/run_04_figures.sh` | rescp | `figs/` |
 
-Each stage can be run on its own; stage 3 switches environments itself. The scripts assume two GPUs (`NGPU`) and run up to `NPAR` closed-loop runs in parallel. Stage 1 is the slowest (hyper-parameter tuning, up to about 50 min per deep forecaster per dataset on one A40); the full pipeline takes several hours. To reproduce only the figures from the published results, place the Zenodo `results/` and `results_sim/` folders in the repository root and run stage 4.
+Each stage can be run on its own; stage 3 switches environments itself. The scripts assume two GPUs (`NGPU`) and run up to `NPAR` closed-loop runs in parallel. Stage 1 is the slowest (hyper-parameter tuning, up to about 50 min per deep forecaster per dataset on one A40); the full pipeline takes several hours. To reproduce only the figures from the published results, unzip `data.zip`, `results.zip` and `results_sim.zip` from the Zenodo data record in the repository root and run stage 4.
 
 ## License
 
