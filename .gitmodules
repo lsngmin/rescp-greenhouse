@@ -1,0 +1,12 @@
+[submodule "third_party/reservoir-conformal-prediction"]
+	path = third_party/reservoir-conformal-prediction
+	url = https://github.com/RobertoNeglia/reservoir-conformal-prediction.git
+[submodule "third_party/ModernTCN"]
+	path = third_party/ModernTCN
+	url = https://github.com/luodhhh/ModernTCN.git
+[submodule "third_party/Time-Series-Library"]
+	path = third_party/Time-Series-Library
+	url = https://github.com/thuml/Time-Series-Library.git
+[submodule "third_party/GreenLight-Gym"]
+	path = third_party/GreenLight-Gym
+	url = https://github.com/BartvLaatum/GreenLight-Gym.git

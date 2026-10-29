@@ -1,0 +1,17 @@
+# data and results live on Zenodo
+data/
+data_sim/
+results/
+results_sim/
+logs/
+figs/*.png
+# environment
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# secrets
+*.key
+*_key
+id_*
+config/
+.env
